@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Cash Manager" default="help">
+
+	<property name="appname" value="cashman"/>
+	<property name="build.dir" value="build"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="dist.dir" value="dist"/>
+	<property name="src.dir" value="src"/>
+	<property name="class.dir" value="build/WEB-INF/classes"/>
+	<property name="junit.report.dir" value="junitreport"/>
+	<property name="war.file" value="${dist.dir}/${appname}.war"/>
+	
+	<path id="master-classpath">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+		<pathelement location="${class.dir}"/>
+	</path>
+
+	<target name="help">
+		<echo>Hello!</echo>
+	</target>
+	
+	<target name="init">
+		<mkdir dir="${build.dir}/${lib.dir}"/>
+		<mkdir dir="${class.dir}"/>
+		<mkdir dir="${junit.report.dir}"/>
+		<mkdir dir="${junit.report.dir}/html"/>
+	</target>
+	
+	<target name="compile">
+		<javac srcdir="${src.dir}" destdir="${class.dir}" debug="true"
+			failonerror="true" classpathref="master-classpath"/>
+	</target>
+	
+	<target name="build" depends="init, compile"/>
+	
+	<target name="test">
+		<junit printsummary="no">
+			<classpath refid="master-classpath"/>
+			<batchtest todir="${junit.report.dir}">
+				<formatter type="xml"/>
+				<fileset dir="${class.dir}">
+					<include name="**/*Test.class"/>
+				</fileset>
+			</batchtest>
+		</junit>
+		<junitreport todir="${junit.report.dir}">
+			<fileset dir="${junit.report.dir}">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<report todir="${junit.report.dir}/html"/>
+		</junitreport>
+	</target>
+</project>
