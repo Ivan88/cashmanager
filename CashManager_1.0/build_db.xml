@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Cash Manager db" default="execsql">
+	
+	<property name="pgjar" value="lib/postgresql-9.2-1000.jdbc4.jar"/>
+	<property name="pgclass" value="org.postgresql.Driver"/>
+	<property name="pgalias" value="postgres"/>
+	<property name="pgport" value="5432"/>
+	<property name="pguserid" value="postgres"/>
+	<property name="pgpasswd" value="514840"/>
+	
+	<property name="sqlfile" value=""/>
+	
+	<target name="execsql">
+		<sql classpath="${pgjar}" 
+			userid="${pguserid}" 
+			password="${pgpasswd}" 
+			url="jdbc:postgresql://localhost:${pgport}/${pgalias}" 
+			driver="${pgclass}"
+			print="on">
+			
+			<path>
+				<fileset dir="dbscripts">
+					<include name="createdb.sql"/>
+				</fileset>
+			</path>
+		</sql>
+	</target>
+</project>
