@@ -13,5 +13,15 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="D:/myRepos/CashManager_1.0/lib/hibernate-core-4.1.7.Final.jar"/>
+	<classpathentry kind="lib" path="D:/myRepos/CashManager_1.0/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/myRepos/CashManager_1.0/lib/hibernate-commons-annotations-4.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="D:/myRepos/CashManager_1.0/lib/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="D:/myRepos/CashManager_1.0/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="D:/myRepos/CashManager_1.0/lib/javassist-3.15.0-GA.jar"/>
+	<classpathentry kind="lib" path="D:/myRepos/CashManager_1.0/lib/jboss-logging-3.1.0.GA.jar"/>
+	<classpathentry kind="lib" path="D:/myRepos/CashManager_1.0/lib/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="D:/myRepos/CashManager_1.0/lib/postgresql-9.2-1000.jdbc4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

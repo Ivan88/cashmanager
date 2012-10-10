@@ -35,6 +35,14 @@
 	
 	<target name="build" depends="init, compile"/>
 	
+	<target name="hibernate-test">
+		<junit>
+			<formatter type="plain" usefile="no"/>
+			<classpath refid="master-classpath"/>
+			<test name="com.oivan.cashman.test.HibernateTest.java"/>
+		</junit>
+	</target>
+	
 	<target name="test">
 		<junit printsummary="no">
 			<classpath refid="master-classpath"/>
