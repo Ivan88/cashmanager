@@ -53,6 +53,10 @@
 				</fileset>
 			</batchtest>
 		</junit>
+		<antcall target="junit-report"/>
+	</target>
+	
+	<target name="junit-report">
 		<junitreport todir="${junit.report.dir}">
 			<fileset dir="${junit.report.dir}">
 				<include name="TEST-*.xml"/>

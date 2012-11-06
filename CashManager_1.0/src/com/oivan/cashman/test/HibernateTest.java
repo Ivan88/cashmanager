@@ -24,10 +24,11 @@ public class HibernateTest {
 	private ServiceRegistry serviceRegistry;
 	private Transaction tx;
 	private CostItem costItem;
+	private Configuration configuration;
 	
 	@Before
 	public void setUp() {
-		Configuration configuration = new Configuration();
+		configuration = new Configuration();
 		configuration.configure().setProperty("hibernate.show_sql", "false");
 		serviceRegistry = new ServiceRegistryBuilder().applySettings(
 		configuration.getProperties()).buildServiceRegistry();
