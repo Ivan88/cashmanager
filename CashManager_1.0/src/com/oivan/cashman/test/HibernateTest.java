@@ -1,9 +1,9 @@
 package com.oivan.cashman.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
-
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,27 +13,30 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.oivan.cashman.model.CostItem;
+import com.oivan.cashman.util.HibernateUtil;
 
 public class HibernateTest {
 	
-	private SessionFactory sessionFactory;
+//	private SessionFactory sessionFactory;
 	private Session session;
-	private ServiceRegistry serviceRegistry;
+//	private ServiceRegistry serviceRegistry;
 	private Transaction tx;
 	private CostItem costItem;
-	private Configuration configuration;
+//	private Configuration configuration;
 	
 	@Before
 	public void setUp() {
-		configuration = new Configuration();
-		configuration.configure().setProperty("hibernate.show_sql", "false");
-		serviceRegistry = new ServiceRegistryBuilder().applySettings(
-		configuration.getProperties()).buildServiceRegistry();
-		sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-		session = sessionFactory.openSession();
+//		configuration = new Configuration();
+//		configuration.configure().setProperty("hibernate.show_sql", "false");
+//		serviceRegistry = new ServiceRegistryBuilder().applySettings(
+//		configuration.getProperties()).buildServiceRegistry();
+//		sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+//		session = sessionFactory.openSession();
+		session = HibernateUtil.getSessionFactory().openSession();
 		tx = session.beginTransaction();
 	}
 	
@@ -58,6 +61,6 @@ public class HibernateTest {
 	@After
 	public void tearDown() {
 		session.close();
-		sessionFactory.close();
+		HibernateUtil.getSessionFactory().close();
 	}
 }
