@@ -1,6 +1,6 @@
 package com.oivan.cashman.model;
 
-public class CostItem {
+public class ExpenseItem {
 	
 	private int costItemID;
 	private String itemName;

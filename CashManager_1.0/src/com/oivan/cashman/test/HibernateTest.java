@@ -16,44 +16,35 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.oivan.cashman.model.CostItem;
+import com.oivan.cashman.model.ExpenseItem;
 import com.oivan.cashman.util.HibernateUtil;
 
 public class HibernateTest {
 	
-//	private SessionFactory sessionFactory;
 	private Session session;
-//	private ServiceRegistry serviceRegistry;
 	private Transaction tx;
-	private CostItem costItem;
-//	private Configuration configuration;
+	private ExpenseItem expenseItem;
 	
 	@Before
 	public void setUp() {
-//		configuration = new Configuration();
-//		configuration.configure().setProperty("hibernate.show_sql", "false");
-//		serviceRegistry = new ServiceRegistryBuilder().applySettings(
-//		configuration.getProperties()).buildServiceRegistry();
-//		sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-//		session = sessionFactory.openSession();
 		session = HibernateUtil.getSessionFactory().openSession();
 		tx = session.beginTransaction();
 	}
 	
 	@Test
 	public void testDataBase() {
-		costItem = (CostItem)session.get(CostItem.class, 1);
-		System.out.println("Name of item: " + costItem.getItemName());
-		assertEquals(costItem.getItemName(), "food");
+		expenseItem = (ExpenseItem)session.get(ExpenseItem.class, 1);
+		System.out.println("Name of item: " + expenseItem.getItemName());
+		assertEquals(expenseItem.getItemName(), "food");
 	}
 	
 	@Test
 	public void testQueryToDataBase() {
-		List<?> itemList = session.createQuery("from CostItem").list();
+		List<?> itemList = session.createQuery("from ExpenseItem").list();
 		for (int i=0; i<itemList.size(); i++) {
-			costItem = (CostItem)itemList.get(i);
-			System.out.println("Row " + (i + 1) + "> " + costItem.getItemName()
-					+ " (" + costItem.getCostItemID() + ")");
+			expenseItem = (ExpenseItem)itemList.get(i);
+			System.out.println("Row " + (i + 1) + "> " + expenseItem.getItemName()
+					+ " (" + expenseItem.getCostItemID() + ")");
 		}
 		assertNotNull(itemList);
 	}

@@ -4,8 +4,8 @@
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.oivan.cashman.model.CostItem" table="CostItem">
-		<id name="costItemID" column="costItemID">
+	<class name="com.oivan.cashman.model.ExpenseItem" table="ExpenseItem">
+		<id name="expenseItemID" column="expenseItemID">
 			<generator class="assigned"/>
 		</id>
 		<property name="itemName" column="itemName"/>

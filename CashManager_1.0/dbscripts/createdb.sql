@@ -1,7 +1,7 @@
 -- Drop tables if they exist
 DROP TABLE IF EXISTS Users CASCADE;
-DROP TABLE IF EXISTS CashCostHistory CASCADE;
-DROP TABLE IF EXISTS CostItem CASCADE;
+DROP TABLE IF EXISTS ExpensesHistory CASCADE;
+DROP TABLE IF EXISTS ExpenseItem CASCADE;
 DROP TABLE IF EXISTS DayReport CASCADE;
 DROP TABLE IF EXISTS MonthReport CASCADE;
 DROP TABLE IF EXISTS YearReport CASCADE;
@@ -16,15 +16,15 @@ CREATE TABLE Users (
 	email VARCHAR(255)
 );
 
-CREATE TABLE CostItem (
-	costItemID INTEGER PRIMARY KEY NOT NULL,
+CREATE TABLE ExpenseItem (
+	expenseItemID INTEGER PRIMARY KEY NOT NULL,
 	itemName VARCHAR(100)
 );
 
-CREATE TABLE CashCostHistory (
-	cashCostHistoryID INTEGER PRIMARY KEY NOT NULL,
+CREATE TABLE ExpensesHistory (
+	expensesHistoryID INTEGER PRIMARY KEY NOT NULL,
 	userID INTEGER REFERENCES Users(userID),
-	costItemID INTEGER REFERENCES CostItem(costItemID),
+	expenseItemID INTEGER REFERENCES ExpenseItem(expenseItemID),
 	amount FLOAT,
 	date DATE
 );
@@ -32,7 +32,7 @@ CREATE TABLE CashCostHistory (
 CREATE TABLE DayReport (
 	dayReportID INTEGER PRIMARY KEY NOT NULL,
 	userID INTEGER REFERENCES Users(userID),
-	cashCostHistoryID INTEGER REFERENCES CashCostHistory(cashCostHistoryID)
+	expensesHistoryID INTEGER REFERENCES ExpensesHistory(expensesHistoryID)
 );
 
 CREATE TABLE MonthReport (
@@ -51,6 +51,6 @@ CREATE TABLE MonthSchedule (
 	monthScheduleID INTEGER PRIMARY KEY NOT NULL,
 	userID INTEGER REFERENCES Users(userID),
 	month VARCHAR(20),
-	costItemID INTEGER REFERENCES CostItem(costItemID),
+	expenseItemID INTEGER REFERENCES ExpenseItem(expenseItemID),
 	amount FLOAT
 );

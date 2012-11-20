@@ -24,7 +24,7 @@
 			org.hibernate.cache.NoCacheProvider
 		</property>
 		
-		<mapping resource="com/oivan/cashman/model/CostItem.hbm.xml"/>
+		<mapping resource="com/oivan/cashman/model/ExpenseItem.hbm.xml"/>
 		<!-- <mapping resource=""/>
 		<mapping resource=""/> -->
 	</session-factory>
