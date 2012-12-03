@@ -4,12 +4,10 @@
  */
 package cashmanagergui;
 
+import java.io.IOException;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -17,11 +15,16 @@ import javafx.stage.Stage;
  * @author Ivan
  */
 public class CashManagerGUI extends Application {
-    
-    @Override
-    public void start(Stage primaryStage) {
-       
-    }
+	
+	@Override
+	public void start(Stage primaryStage) throws IOException {
+		primaryStage.setTitle("Cash Manager Sign in");
+		primaryStage.setScene((Scene)FXMLLoader.load(getClass().getResource("view.login.login.fxml")));
+		primaryStage.show();
+//		primaryStage.setTitle("Cash Manager 1.0");
+//		primaryStage.setScene((Scene)FXMLLoader.load(getClass().getResource("view.main.fxml")));
+//		primaryStage.show();
+	}
 
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
