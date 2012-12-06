@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Scene width="1000" height="700"
+	fx:controller="view.MainController"
+	xmlns:fx="http://javafx.com/fxml">
+	
+	<TabPane>
+		<tabs>
+			<Tab name="Plans">
+				
+			</Tab>
+			<Tab name="Income/Expenses">
+				
+			</Tab>
+			<Tab name="Settings">
+				
+			</Tab>
+		</tabs>
+	</TabPane>
+	
+	
+</Scene>
