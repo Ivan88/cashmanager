@@ -10,15 +10,24 @@
 	fx:controller="view.MainController"
 	xmlns:fx="http://javafx.com/fxml">
 	
-	<TabPane>
+	<fx:define>
+		<fx:include source="/view/tabs/plans_tab.fxml" fx:id="plansContent"/>
+		<fx:include source="/view/tabs/ie_tab.fxml" fx:id="ieContent"/>
+		<fx:include source="/view/tabs/settings_tab.fxml" fx:id="settingsContent"/>
+	</fx:define>
+
+	<TabPane tabMinWidth="150">
 		<tabs>
-			<Tab name="Plans">
+			<Tab text="Plans" content="$plansContent" 
+				 fx:id="plansTab" closable="false">
 				
 			</Tab>
-			<Tab name="Income/Expenses">
+			<Tab text="Income/Expenses" content="$ieContent" 
+				 fx:id="ieTab" closable="false">
 				
 			</Tab>
-			<Tab name="Settings">
+			<Tab text="Settings" content="$settingsContent" 
+				 fx:id="settingsTab" closable="false">
 				
 			</Tab>
 		</tabs>

@@ -38,6 +38,6 @@
 		<Button text="Sign in" onAction="#handleSubmitButtonAction"/>
 	</HBox>
 
-	<Text fx:id="actionTarget"
-		GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+	<!--<Text fx:id="actionTarget"
+		GridPane.columnIndex="1" GridPane.rowIndex="6"/>-->
 </GridPane>
