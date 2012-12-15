@@ -37,4 +37,8 @@
 		GridPane.columnIndex="1" GridPane.rowIndex="4">
 		<Button text="Sign in" onAction="#handleSubmitButtonAction"/>
 	</HBox>
+
+	<Label fx:id="errorMessageLabel"
+		GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
 </GridPane>

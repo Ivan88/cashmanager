@@ -23,11 +23,21 @@ public class CashManagerGUI extends Application {
 	
 	private Stage stage;
 	
+	private static CashManagerGUI instance;
+	
+	public static CashManagerGUI getInstance() {
+		if (instance == null) {
+			instance = new CashManagerGUI();
+		}
+		return instance;
+	}
+	
+	private CashManagerGUI() {}
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		this.stage = primaryStage;
 		stage.setTitle(Constants.TITLE + " " + Constants.VERSION + " " + Constants.SIGN_IN_STRING);
-//		primaryStage.setScene(new Scene((Parent)FXMLLoader.load(getClass().getResource(Constants.LOGIN_FXML_PATH_STRING)), 300, 300));
 		gotoLogin();
 		primaryStage.show();
 	}
@@ -40,11 +50,20 @@ public class CashManagerGUI extends Application {
 		}
 	}
 	
-	public void gotoMain() {
+	private void gotoMain() {
 		try {
 			replaceSceneContent(Constants.MAIN_FXML_PATH_STRING);
 		} catch (Exception ex) {
 			Logger.getLogger(CashManagerGUI.class.getName()).log(Level.SEVERE, null, ex);
+		}
+	}
+	
+	public boolean checkCredentials(String login, String password) {
+		if (login.equals("ivan") && password.equals("ivan")) {
+			gotoMain();
+			return true;
+		} else {
+			return false;
 		}
 	}
 	
