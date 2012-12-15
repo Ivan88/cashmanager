@@ -17,4 +17,5 @@ public class Constants {
 	public static String SIGN_IN_STRING = "Sign in";
 	public static String LOGIN_FXML_PATH_STRING = "/view/login/login.fxml";
 	public static String MAIN_FXML_PATH_STRING = "/view/main.fxml";
+	public static String DEFAULT_SKIN = "/main/defaultSkin.css";
 }

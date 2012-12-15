@@ -6,32 +6,30 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Scene width="1000" height="700"
+<TabPane 
+	tabMinWidth="150"
+	stylesheets="/view/main.css"
 	fx:controller="view.MainController"
-	xmlns:fx="http://javafx.com/fxml">
-	
+	xmlns:fx="http://javafx.com/fxml" >
+
 	<fx:define>
 		<fx:include source="/view/tabs/plans_tab.fxml" fx:id="plansContent"/>
 		<fx:include source="/view/tabs/ie_tab.fxml" fx:id="ieContent"/>
 		<fx:include source="/view/tabs/settings_tab.fxml" fx:id="settingsContent"/>
 	</fx:define>
 
-	<TabPane tabMinWidth="150">
-		<tabs>
-			<Tab text="Plans" content="$plansContent" 
-				 fx:id="plansTab" closable="false">
+	<tabs>
+		<Tab text="Plans" content="$plansContent" 
+			 fx:id="plansTab" closable="false">
 				
-			</Tab>
-			<Tab text="Income/Expenses" content="$ieContent" 
-				 fx:id="ieTab" closable="false">
-				
-			</Tab>
-			<Tab text="Settings" content="$settingsContent" 
-				 fx:id="settingsTab" closable="false">
-				
-			</Tab>
-		</tabs>
-	</TabPane>
-	
-	
-</Scene>
+		</Tab>
+		<Tab text="Income/Expenses" content="$ieContent" 
+			 fx:id="ieTab" closable="false">
+			
+		</Tab>
+		<Tab text="Settings" content="$settingsContent" 
+			 fx:id="settingsTab" closable="false">
+			
+		</Tab>
+	</tabs>
+</TabPane>

@@ -7,7 +7,7 @@
 */
 
 .root { 
-   -fx-background-color: #aaffdc;
+   -fx-background-color: linear-gradient(#00CC66, #CCFFCC);
 }
 
 .label {
@@ -32,7 +32,7 @@
 #welcome-text {
 	-fx-font-size: 32px;
 	-fx-font-family: "Arial black";
-	-fx-fill: #ffffaa;
+	-fx-fill: #3399FF;
 	-fx-effect: innershadow( three-pass-box , rgba(0, 0, 0, 0.7) , 6 , 0.0 , 0 , 2 );
 }
 
