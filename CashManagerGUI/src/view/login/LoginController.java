@@ -11,10 +11,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import utils.Constants;
 
 /**
  * FXML Controller class
@@ -23,14 +22,15 @@ import javafx.stage.Stage;
  */
 public class LoginController {
 
-	@FXML private Text actionTarget;
-	
 	@FXML protected void handleSubmitButtonAction(ActionEvent event) {
-//		actionTarget.setText("Sign in button pressed");
 		Node node = (Node)event.getSource();
+		
+		Text;
+		
 		Stage stage = (Stage)node.getScene().getWindow();
+		stage.setTitle(Constants.TITLE + " " + Constants.VERSION);
 		try {
-			stage.setScene((Scene)FXMLLoader.load(getClass().getResource("/view/main.fxml")));
+			stage.setScene((Scene)FXMLLoader.load(getClass().getResource(Constants.MAIN_FXML_PATH_STRING)));
 		} catch (IOException ex) {
 			Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
 		}

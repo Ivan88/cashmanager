@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import utils.Constants;
 
 /**
  *
@@ -18,8 +19,8 @@ public class CashManagerGUI extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		primaryStage.setTitle("Cash Manager Sign in");
-		primaryStage.setScene(new Scene((Parent)FXMLLoader.load(getClass().getResource("/view/login/login.fxml")), 300, 300));
+		primaryStage.setTitle(Constants.TITLE + " " + Constants.VERSION + " " + Constants.SIGN_IN_STRING);
+		primaryStage.setScene(new Scene((Parent)FXMLLoader.load(getClass().getResource(Constants.LOGIN_FXML_PATH_STRING)), 300, 300));
 		primaryStage.show();
 	}
 
