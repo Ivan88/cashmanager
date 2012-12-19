@@ -25,7 +25,7 @@
 		</property>
 		
 		<mapping resource="com/oivan/cashman/model/ExpenseItem.hbm.xml"/>
-		<!-- <mapping resource=""/>
-		<mapping resource=""/> -->
+		<mapping resource="com/oivan/cashman/model/User.hbm.xml"/>
+		<!-- <mapping resource=""/> -->
 	</session-factory>
 </hibernate-configuration>

@@ -44,7 +44,7 @@ public class HibernateTest {
 		for (int i=0; i<itemList.size(); i++) {
 			expenseItem = (ExpenseItem)itemList.get(i);
 			System.out.println("Row " + (i + 1) + "> " + expenseItem.getItemName()
-					+ " (" + expenseItem.getCostItemID() + ")");
+					+ " (" + expenseItem.getExpenseItemID() + ")");
 		}
 		assertNotNull(itemList);
 	}

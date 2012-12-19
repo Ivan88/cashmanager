@@ -1,16 +1,19 @@
 package com.oivan.cashman.model;
 
+/*
+ * 
+ */
 public class ExpenseItem {
 	
-	private int costItemID;
+	private int expenseItemID;
 	private String itemName;
 	
-	public int getCostItemID() {
-		return costItemID;
+	public int getExpenseItemID() {
+		return expenseItemID;
 	}
 	
-	public void setCostItemID(int costItemID) {
-		this.costItemID = costItemID;
+	public void setExpenseItemID(int expenseItemID) {
+		this.expenseItemID = expenseItemID;
 	}
 	
 	public String getItemName() {
