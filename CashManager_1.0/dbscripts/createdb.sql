@@ -50,7 +50,7 @@ CREATE TABLE YearReport (
 CREATE TABLE MonthSchedule (
 	monthScheduleID INTEGER PRIMARY KEY NOT NULL,
 	userID INTEGER REFERENCES Users(userID),
-	month VARCHAR(20),
+	monthName VARCHAR(20),
 	expenseItemID INTEGER REFERENCES ExpenseItem(expenseItemID),
 	amount FLOAT
 );

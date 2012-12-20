@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.oivan.cashman.model.ExpensesHistory" table="ExpensesHistory">
+		<id name="expensesHistoryId" column="expensesHistoryId">
+			<generator class="assigned"/>
+		</id>
+		<property name="userId" column="userId"/>
+		<property name="expenseItemId" column="expenseItemId"/>
+		<property name="amount" column="amount"/>
+		<property name="date" column="date"/>
+	</class>
+</hibernate-mapping>

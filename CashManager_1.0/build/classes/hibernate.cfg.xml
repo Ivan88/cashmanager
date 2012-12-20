@@ -26,6 +26,11 @@
 		
 		<mapping resource="com/oivan/cashman/model/ExpenseItem.hbm.xml"/>
 		<mapping resource="com/oivan/cashman/model/User.hbm.xml"/>
+		<mapping resource="com/oivan/cashman/model/ExpensesHistory.hbm.xml"/>
+		<mapping resource="com/oivan/cashman/model/MonthSchedule.hbm.xml"/>
+		<mapping resource="com/oivan/cashman/model/reports/DayReport.hbm.xml"/>
+		<mapping resource="com/oivan/cashman/model/reports/MonthReport.hbm.xml"/>
+		<mapping resource="com/oivan/cashman/model/reports/YearReport.hbm.xml"/>
 		<!-- <mapping resource=""/> -->
 	</session-factory>
 </hibernate-configuration>
