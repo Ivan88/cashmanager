@@ -7,55 +7,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane prefHeight="636.0" prefWidth="911.0" tabClosingPolicy="UNAVAILABLE"
-		 xmlns:fx="http://javafx.com/fxml" fx:controller="main.MainController">
-    <tabs>
-       <Tab text="Expenses">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="454.0">
-              <children>
-                <TextField layoutX="242.0" layoutY="72.0" prefWidth="200.0" />
-                <Button layoutX="60.0" layoutY="138.0" mnemonicParsing="false" prefWidth="71.0" text="Save" />
-                <Label fx:id="label" layoutX="51.0" layoutY="72.0" minHeight="16.0" minWidth="69.0" text="Expense item 2" />
-                <ChoiceBox layoutX="149.0" layoutY="36.0">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ChoiceBox>
-                <Label layoutX="51.0" layoutY="35.0" text="Expense item 1" />
-                <ChoiceBox layoutX="149.0" layoutY="72.0">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ChoiceBox>
-                <ChoiceBox layoutX="149.0" layoutY="108.0">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
-                    </FXCollections>
-                  </items>
-                </ChoiceBox>
-                <TextField layoutX="242.0" layoutY="108.0" prefWidth="200.0" />
-                <Label id="label" layoutX="51.0" layoutY="108.0" minHeight="16.0" minWidth="69.0" text="Expense item 3" />
-                <TextField layoutX="242.0" layoutY="35.0" prefWidth="200.0" />
-              </children>
-            </AnchorPane>
-          </content>
+<TabPane prefHeight="600.0" prefWidth="900.0" 
+		 tabClosingPolicy="UNAVAILABLE"
+		 fx:controller="main.MainController"
+		 stylesheets="main.css"
+		 tabMinWidth="120"
+		 xmlns:fx="http://javafx.com/fxml" >
+	
+	<!--<fx:define>
+		<fx:include source="tabs/plansTab.fxml" fx:id="plansContentId"/>
+		<fx:include source="tabs/expensesTab.fxml" fx:id="expensesContentId"/>
+		<fx:include source="tabs/historyTab.fxml" fx:id="historyContentId"/>
+	</fx:define>-->
+
+	<tabs>
+		<Tab text="Plans">	
+			<fx:include source="tabs/plansTab.fxml"/>
+		</Tab>
+		<Tab text="Expenses">
+			<fx:include source="tabs/expensesTab.fxml"/>
         </Tab>
-        <Tab text="History">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-          </content>
-        </Tab>
-      </tabs>
+		<Tab text="History">     
+			<fx:include source="tabs/historyTab.fxml"/>
+		</Tab>
+	</tabs>
 </TabPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="expensesTabId" 
+			prefHeight="400.0" 
+			prefWidth="600.0" 
+			fx:controller="main.tabs.ExpensesController"
+			xmlns:fx="http://javafx.com/fxml" >
+	
+	<VBox spacing="5" AnchorPane.topAnchor="100.0">
+		<padding>
+			<Insets top="10" left="10"/>
+		</padding>
+		<HBox spacing="10">
+			<Label text="Expense item 1" />
+			<ChoiceBox>
+				
+               </ChoiceBox>
+			<TextField prefWidth="200.0" />
+		</HBox>
+		<HBox spacing="10">
+			<Label text="Expense item 2" />
+			<ChoiceBox>
+				
+               </ChoiceBox>
+			<TextField prefWidth="200.0" />
+		</HBox>
+		<HBox spacing="10">
+			<Label text="Expense item 3" />
+			<ChoiceBox>
+				
+            </ChoiceBox>
+			<TextField prefWidth="200.0" />
+		</HBox>
+		<Button mnemonicParsing="false" prefWidth="70.0" text="Save" />
+	</VBox>
+</AnchorPane>
