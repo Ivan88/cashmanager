@@ -8,31 +8,35 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="expensesTabId" prefHeight="$MAX_DOUBLE" prefWidth="$MAX_DOUBLE" xmlns:fx="http://javafx.com/fxml" fx:controller="main.tabs.ExpensesTabController">
-  <VBox spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<AnchorPane id="expensesTabId" 
+			prefHeight="400.0" 
+			prefWidth="600.0" 
+			xmlns:fx="http://javafx.com/fxml" 
+			fx:controller="main.tabs.ExpensesTabController">
+
+  <VBox spacing="5.0" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
     <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
     </padding>
-    <Label text="Please, input and save your expenses." />
+	<Label text="Please, input and save your expenses."/>
     <HBox spacing="10.0">
       <Label text="Expense item 1" />
-      <ComboBox />
+      <ChoiceBox />
       <TextField prefWidth="200.0" />
     </HBox>
     <HBox spacing="10.0">
       <Label text="Expense item 2" />
-      <ComboBox />
+      <ChoiceBox />
       <TextField prefWidth="200.0" />
     </HBox>
     <HBox spacing="10.0">
       <Label text="Expense item 3" />
-      <ComboBox />
+      <ChoiceBox />
       <TextField prefWidth="200.0" />
     </HBox>
-    <HBox>
-      <Button prefWidth="100.0" text="Save" />
-	  <Separator prefWidth="100.0" />
-      <Button prefWidth="100.0" text="Add item" />
-    </HBox>
+	<HBox spacing="110.0">
+		<Button prefWidth="100.0" text="Save" />
+		<Button prefWidth="100.0" text="Add item" />
+	</HBox>
   </VBox>
 </AnchorPane>
