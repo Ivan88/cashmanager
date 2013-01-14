@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="636.0" prefWidth="911.0" xmlns:fx="http://javafx.com/fxml" fx:controller="main.MainController">
+<AnchorPane id="AnchorPane" prefHeight="636.0" prefWidth="911.0" xmlns:fx="http://javafx.com/fxml" fx:controller="ui.MainController">
   <children>
     <Label fx:id="label" layoutX="46.0" layoutY="121.0" minHeight="16.0" minWidth="69.0" text="Expense item 2" />
     <MenuBar layoutY="2.0" prefWidth="911.0">

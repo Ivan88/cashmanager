@@ -1,8 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package main;
+package ui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +14,7 @@ public class SimpleCashManager extends Application {
 	
 	@Override
 	public void start(Stage stage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("/main/main.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/ui/main.fxml"));
 		
 		Scene scene = new Scene(root);
 		

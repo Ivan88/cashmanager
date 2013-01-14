@@ -10,16 +10,10 @@
 <TabPane prefHeight="600.0" prefWidth="900.0" 
 		 minHeight="600.0" minWidth="900.0"
 		 tabClosingPolicy="UNAVAILABLE"
-		 fx:controller="main.MainController"
-		 stylesheets="/main/main.css"
+		 fx:controller="ui.MainController"
+		 stylesheets="/ui/main.css"
 		 tabMinWidth="120"
 		 xmlns:fx="http://javafx.com/fxml" >
-	
-	<!--<fx:define>
-		<fx:include source="tabs/plansTab.fxml" fx:id="plansContentId"/>
-		<fx:include source="tabs/expensesTab.fxml" fx:id="expensesContentId"/>
-		<fx:include source="tabs/historyTab.fxml" fx:id="historyContentId"/>
-	</fx:define>-->
 
 	<tabs>
 		<Tab text="Plans">	
