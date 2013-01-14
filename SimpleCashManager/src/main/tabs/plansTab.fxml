@@ -3,12 +3,40 @@
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="main.tabs.PlansTabController">
-	<stylesheets>
-		<URL value="@plans.css"/>
-	</stylesheets>
-</AnchorPane>
+<ScrollPane 
+	id="plansTabId" 
+	prefHeight="$MAX_DOUBLE" 
+	prefWidth="$MAX_DOUBLE" 
+	xmlns:fx="http://javafx.com/fxml" 
+	fx:controller="main.tabs.PlansTabController">
+	
+	<HBox spacing="5">
+		<GridPane id="plansGrid" prefHeight="$MAX_DOUBLE" prefWidth="$MAX_DOUBLE" hgap="5.0" vgap="5.0">
+			<padding>
+				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+			</padding>
+
+			<Label text="Plan item" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+			<Label text="Amount" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+			<Label text="Description" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+
+			<ComboBox prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+			<TextField prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+			<TextField prefWidth="400.0" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+		</GridPane>
+	
+		<VBox spacing="5">
+			<padding>
+				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+			</padding>
+
+			<Button prefWidth="100.0" text="Save" onAction="#savePlans"/>
+			<Button prefWidth="100.0" text="Add item" onAction="#addPlanItem"/>
+		</VBox>
+	</HBox>
+</ScrollPane>
