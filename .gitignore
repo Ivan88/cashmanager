@@ -9,5 +9,5 @@ dist/
 /SimpleCashManager/dist/
 /SimpleCashManager/bin/
 *.class
-.classpath
+CashManager_1.0/.classpath
 .project
