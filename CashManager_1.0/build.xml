@@ -6,7 +6,7 @@
 	<property name="lib.dir" value="lib"/>
 	<property name="dist.dir" value="dist"/>
 	<property name="src.dir" value="src"/>
-	<property name="class.dir" value="build/WEB-INF/classes"/>
+	<property name="class.dir" value="${build.dir}/WEB-INF/classes"/>
 	<property name="junit.report.dir" value="junitreport"/>
 	<property name="war.file" value="${dist.dir}/${appname}.war"/>
 	
@@ -43,7 +43,7 @@
 		</junit>
 	</target>
 	
-	<target name="test">
+	<target name="test" depends="build">
 		<junit printsummary="no">
 			<classpath refid="master-classpath"/>
 			<batchtest todir="${junit.report.dir}">
@@ -61,7 +61,8 @@
 			<fileset dir="${junit.report.dir}">
 				<include name="TEST-*.xml"/>
 			</fileset>
-			<report todir="${junit.report.dir}/html"/>
+			<report todir="${junit.report.dir}/html" format="noframes"/>
 		</junitreport>
+		<echo message="You can see reports in directory ${junit.report.dir}/html"/>
 	</target>
 </project>

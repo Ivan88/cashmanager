@@ -4,7 +4,7 @@ public class DayReport {
 	
 	private int dayReportId;
 	private int userId;
-	private int expensesHistoryId;
+	private int expensesHistoryItemId;
 	
 	public int getDayReportId() {
 		return dayReportId;
@@ -19,9 +19,9 @@ public class DayReport {
 		this.userId = userId;
 	}
 	public int getExpensesHistoryId() {
-		return expensesHistoryId;
+		return expensesHistoryItemId;
 	}
-	public void setExpensesHistoryId(int cashExpensesHistoryId) {
-		this.expensesHistoryId = cashExpensesHistoryId;
+	public void setExpensesHistoryId(int expensesHistoryItemId) {
+		this.expensesHistoryItemId = expensesHistoryItemId;
 	}
 }
