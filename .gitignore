@@ -1,13 +1,8 @@
-build/
-junitreport/
-nbproject/private/
-nbproject/configs/
-build/
-dist/
-/SimpleCashManager/nbproject/
-/SimpleCashManager/build/
-/SimpleCashManager/dist/
-/SimpleCashManager/bin/
 *.class
-CashManager_1.0/.classpath
-.project
+
+nbproject/private/
+
+# Package Files #
+*.jar
+*.war
+*.ear
