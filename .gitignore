@@ -8,3 +8,6 @@
 /SimpleCashManager/build/
 /SimpleCashManager/dist/
 /SimpleCashManager/bin/
+*.class
+.classpath
+.project
