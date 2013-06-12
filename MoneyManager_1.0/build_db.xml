@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Money Manager db" default="execsql">
+	
+	<property file="local.properties" prefix="local"/>
+	
+	<target name="execsql">
+		<sql classpath="${local.pgjar}" 
+			userid="${local.pguserid}" 
+			password="${local.pgpasswd}"
+			url="${local.pgurl}" 
+			driver="${local.pgclass}"
+			print="on">
+			
+			<path>
+				<fileset dir="dbscripts">
+					<include name="createdb.sql"/>
+				</fileset>
+			</path>
+			
+		</sql>
+	</target>
+</project>

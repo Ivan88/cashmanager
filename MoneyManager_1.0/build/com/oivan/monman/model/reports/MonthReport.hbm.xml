@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.oivan.monman.model.reports.MonthReport" table="MonthReport">
+		<id name="monthReportId" column="monthReportId">
+			<generator class="assigned"/>
+		</id>
+		<property name="userId" column="userId"/>
+		<property name="dayReportId" column="dayReportId"/>
+	</class>
+</hibernate-mapping>
