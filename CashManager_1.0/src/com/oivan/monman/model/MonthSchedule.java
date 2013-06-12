@@ -1,20 +1,24 @@
-package com.oivan.cashman.model;
+package com.oivan.monman.model;
 
-import java.util.Date;
+public class MonthSchedule {
 
-public class ExpensesHistoryItem {
-
-	private int expensesHistoryItemId;
+	private int monthScheduleId;
+	private String monthName;
 	private int userId;
 	private int expenseItemId;
 	private double amount;
-	private Date date;
 	
-	public int getExpensesHistoryId() {
-		return expensesHistoryItemId;
+	public int getMonthScheduleId() {
+		return monthScheduleId;
 	}
-	public void setExpensesHistoryId(int expensesHistoryItemId) {
-		this.expensesHistoryItemId = expensesHistoryItemId;
+	public void setMonthScheduleId(int monthScheduleId) {
+		this.monthScheduleId = monthScheduleId;
+	}
+	public String getMonthName() {
+		return monthName;
+	}
+	public void setMonthName(String monthName) {
+		this.monthName = monthName;
 	}
 	public int getUserId() {
 		return userId;
@@ -34,10 +38,6 @@ public class ExpensesHistoryItem {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
+	
+	
 }

@@ -1,4 +1,4 @@
-package com.oivan.cashman.model.reports;
+package com.oivan.monman.model.reports;
 
 public class DayReport {
 	

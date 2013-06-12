@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Cash Manager" default="help">
+<project name="Money Manager" default="help">
 
-	<property name="appname" value="cashman"/>
+	<property name="appname" value="monman"/>
 	<property name="build.dir" value="build"/>
 	<property name="lib.dir" value="lib"/>
 	<property name="dist.dir" value="dist"/>
 	<property name="src.dir" value="src"/>
-	<property name="class.dir" value="${build.dir}/WEB-INF/classes"/>
+	<property name="web.dir" value="web"/>
+	<property name="war.dir" value="${build.dir}"/>
 	<property name="junit.report.dir" value="junitreport"/>
+	<property name="web.xml" value="web.xml"/>
 	<property name="war.file" value="${dist.dir}/${appname}.war"/>
+	
+	<property file="local.properties"/>
 	
 	<path id="master-classpath">
 		<fileset dir="${lib.dir}">
@@ -29,7 +33,7 @@
 	</target>
 	
 	<target name="compile">
-		<javac srcdir="${src.dir}" destdir="${class.dir}" debug="true"
+		<javac srcdir="${src.dir}" destdir="${build.dir}" debug="true"
 			failonerror="true" classpathref="master-classpath"/>
 	</target>
 	
@@ -39,7 +43,7 @@
 		<junit>
 			<formatter type="plain" usefile="no"/>
 			<classpath refid="master-classpath"/>
-			<test name="com.oivan.cashman.test.HibernateTest.java"/>
+			<test name="com.oivan.monman.test.HibernateTest.java"/>
 		</junit>
 	</target>
 	
@@ -64,5 +68,21 @@
 			<report todir="${junit.report.dir}/html" format="noframes"/>
 		</junitreport>
 		<echo message="You can see reports in directory ${junit.report.dir}/html"/>
+	</target>
+	
+	<target name="deploy" depends="war">
+		<delete dir="${deploy.dir}/${appname}"/>
+		<copy file="${war.file}" todir="${deploy.dir}"/>
+	</target>
+	
+	<target name="war">
+		<mkdir dir="${dist.dir}"/>
+		<war destfile="${war.file}" webxml="${web.dir}/WEB-INF/${web.xml}">
+			<fileset dir="${war.dir}">
+				<include name="**/*.*"/>
+				
+				<exclude name="**/test/*.class"/>
+			</fileset>
+		</war>
 	</target>
 </project>

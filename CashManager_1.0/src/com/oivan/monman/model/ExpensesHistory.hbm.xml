@@ -4,11 +4,13 @@
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.oivan.cashman.model.reports.DayReport" table="DayReport">
-		<id name="dayReportId" column="dayReportId">
+	<class name="com.oivan.monman.model.ExpensesHistory" table="ExpensesHistory">
+		<id name="expensesHistoryId" column="expensesHistoryId">
 			<generator class="assigned"/>
 		</id>
 		<property name="userId" column="userId"/>
-		<property name="expensesHistoryId" column="expensesHistoryID"/>
+		<property name="expenseItemId" column="expenseItemId"/>
+		<property name="amount" column="amount"/>
+		<property name="date" column="date"/>
 	</class>
 </hibernate-mapping>

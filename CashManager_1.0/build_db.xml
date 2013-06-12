@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Cash Manager db" default="execsql">
+<project name="Money Manager db" default="execsql">
 	
 	<property file="local.properties" prefix="local"/>
 	

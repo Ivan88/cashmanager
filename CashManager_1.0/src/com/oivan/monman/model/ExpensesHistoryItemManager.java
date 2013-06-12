@@ -1,4 +1,4 @@
-package com.oivan.cashman.model;
+package com.oivan.monman.model;
 
 import java.util.Date;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
-import com.oivan.cashman.util.HibernateUtil;
+import com.oivan.monman.util.HibernateUtil;
 
 /**
  * Manages database operations for ExpensesHistoryItem table.
@@ -65,6 +65,5 @@ public class ExpensesHistoryItemManager {
 			session.getTransaction().rollback();
 			throw e;
 		}
-		
 	}
 }

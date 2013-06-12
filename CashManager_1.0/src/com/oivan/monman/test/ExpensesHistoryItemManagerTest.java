@@ -1,4 +1,4 @@
-package com.oivan.cashman.test;
+package com.oivan.monman.test;
 
 import static org.junit.Assert.*;
 
@@ -7,8 +7,8 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.oivan.cashman.model.ExpensesHistoryItem;
-import com.oivan.cashman.model.ExpensesHistoryItemManager;
+import com.oivan.monman.model.ExpensesHistoryItem;
+import com.oivan.monman.model.ExpensesHistoryItemManager;
 
 public class ExpensesHistoryItemManagerTest {
 	

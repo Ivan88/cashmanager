@@ -1,4 +1,4 @@
-package com.oivan.cashman.test;
+package com.oivan.monman.test;
 
 import static org.junit.Assert.*;
 
@@ -10,14 +10,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.oivan.cashman.model.ExpensesHistory;
-import com.oivan.cashman.model.ExpenseItem;
-import com.oivan.cashman.model.MonthSchedule;
-import com.oivan.cashman.model.User;
-import com.oivan.cashman.model.reports.DayReport;
-import com.oivan.cashman.model.reports.MonthReport;
-import com.oivan.cashman.model.reports.YearReport;
-import com.oivan.cashman.util.HibernateUtil;
+import com.oivan.monman.model.ExpenseItem;
+import com.oivan.monman.model.ExpensesHistory;
+import com.oivan.monman.model.MonthSchedule;
+import com.oivan.monman.model.User;
+import com.oivan.monman.model.reports.DayReport;
+import com.oivan.monman.model.reports.MonthReport;
+import com.oivan.monman.model.reports.YearReport;
+import com.oivan.monman.util.HibernateUtil;
 
 public class HibernateTest {
 	
