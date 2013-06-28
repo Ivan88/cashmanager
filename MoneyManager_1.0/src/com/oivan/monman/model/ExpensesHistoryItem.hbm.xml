@@ -5,7 +5,7 @@
 
 <hibernate-mapping>
 	<class name="com.oivan.monman.model.ExpensesHistoryItem" table="ExpensesHistory">
-		<id name="expensesHistoryId" column="expensesHistoryId">
+		<id name="expensesHistoryItemId" column="expensesHistoryId">
 			<generator class="assigned"/>
 		</id>
 		<property name="userId" column="userId"/>

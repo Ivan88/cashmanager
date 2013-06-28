@@ -2,23 +2,20 @@
 <project name="Money Manager" default="help">
 
 	<property name="appname" value="monman"/>
-	<property name="build.dir" value="build"/>
+	<property name="bin.dir" value="bin"/>
 	<property name="lib.dir" value="lib"/>
-	<property name="dist.dir" value="dist"/>
 	<property name="src.dir" value="src"/>
-	<property name="web.dir" value="web"/>
-	<property name="war.dir" value="${build.dir}"/>
+	<property name="war.dir" value="${bin.dir}/${appname}"/>
 	<property name="junit.report.dir" value="junitreport"/>
 	<property name="web.xml" value="web.xml"/>
-	<property name="war.file" value="${dist.dir}/${appname}.war"/>
+	<property name="war.file" value="${appname}.war"/>
 	
 	<property file="local.properties"/>
 	
-	<path id="master-classpath">
+	<path id="project.classpath">
 		<fileset dir="${lib.dir}">
 			<include name="*.jar"/>
 		</fileset>
-		<pathelement location="${class.dir}"/>
 	</path>
 
 	<target name="help">
@@ -26,14 +23,13 @@
 	</target>
 	
 	<target name="init">
-		<mkdir dir="${build.dir}/${lib.dir}"/>
-		<mkdir dir="${class.dir}"/>
+		<mkdir dir="${bin.dir}/${lib.dir}"/>
 		<mkdir dir="${junit.report.dir}"/>
 		<mkdir dir="${junit.report.dir}/html"/>
 	</target>
 	
 	<target name="compile">
-		<javac srcdir="${src.dir}" destdir="${build.dir}" debug="true"
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" debug="true"
 			failonerror="true" classpathref="master-classpath"/>
 	</target>
 	
@@ -42,18 +38,18 @@
 	<target name="hibernate-test">
 		<junit>
 			<formatter type="plain" usefile="no"/>
-			<classpath refid="master-classpath"/>
+			<classpath refid="project.classpath"/>
 			<test name="com.oivan.monman.test.HibernateTest.java"/>
 		</junit>
 	</target>
 	
 	<target name="test" depends="build">
 		<junit printsummary="no">
-			<classpath refid="master-classpath"/>
+			<classpath refid="project.classpath"/>
 			<batchtest todir="${junit.report.dir}">
 				<formatter type="xml"/>
-				<fileset dir="${class.dir}">
-					<include name="**/*Test.class"/>
+				<fileset dir="${bin.dir}">
+					<include name="*/**/*Test.class"/>
 				</fileset>
 			</batchtest>
 		</junit>
@@ -76,8 +72,8 @@
 	</target>
 	
 	<target name="war">
-		<mkdir dir="${dist.dir}"/>
-		<war destfile="${war.file}" webxml="${web.dir}/WEB-INF/${web.xml}">
+		<mkdir dir="${bin.dir}"/>
+		<war destfile="${war.file}" webxml="src/conf/${web.xml}">
 			<fileset dir="${war.dir}">
 				<include name="**/*.*"/>
 				
@@ -85,4 +81,9 @@
 			</fileset>
 		</war>
 	</target>
+
+    <target name="clean">
+        <delete dir="${bin.dir}"/>
+        <delete dir="${junit.report.dir}"/>
+    </target>
 </project>

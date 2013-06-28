@@ -10,10 +10,10 @@ public class ExpensesHistoryItem {
 	private double amount;
 	private Date date;
 	
-	public int getExpensesHistoryId() {
+	public int getExpensesHistoryItemId() {
 		return expensesHistoryItemId;
 	}
-	public void setExpensesHistoryId(int expensesHistoryItemId) {
+	public void setExpensesHistoryItemId(int expensesHistoryItemId) {
 		this.expensesHistoryItemId = expensesHistoryItemId;
 	}
 	public int getUserId() {

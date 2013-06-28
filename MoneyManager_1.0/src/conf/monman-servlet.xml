@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="urlMapAuthenticate"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="httpRequestInterceptor" />
+			</list>
+		</property>
+		<property name="urlMap">
+			<props>
+				<prop key="/expenseshistorylist.htm">
+					expensesHistoryListController
+				</prop>
+				<prop key="/enterexpenses.htm">enterExpensesController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- View Resolver -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	
+	<bean name="expensesHistoryListController"
+		class="com.oivan.monman.controller.ExpensesHistoryListController">
+		<property name="expensesHistoryItemManager">
+			<ref bean="expensesHistoryItemManager" />
+		</property>
+		<property name="applicationSecurityManager">
+			<ref bean="applicationSecurityManager" />
+		</property>
+		<property name="monmanJmxBean">
+			<ref bean="monmanJmxBean" />
+		</property>
+		<property name="successView">
+			<value>expenseshistory</value>
+		</property>
+	</bean>
+	
+ 	<bean name="enterExpensesController"
+		class="com.oivan.monman.controller.EnterExpensesController">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>com.oivan.monman.model.ExpensesHistoryItem</value>
+		</property>
+		<property name="formView">
+			<value>enterexpenses</value>
+		</property>
+		<property name="successView">
+			<value>redirect:expenseshistorylist.htm</value>
+		</property>
+		<property name="validator">
+			<ref bean="enterHoursValidator" />
+		</property>
+		<property name="expensesHistoryItemManager">
+			<ref bean="expensesHistoryItemManager" />
+		</property>
+		<property name="applicationSecurityManager">
+			<ref bean="applicationSecurityManager" />
+		</property>
+	</bean>
+	
+	<bean name="expensesHistoryItemManager" class="com.oivan.monman.model.ExpensesHistoryItemManager"/>
+	
+	<!-- Utility classes -->
+	<bean id="applicationSecurityManager"
+		class="com.oivan.monman.util.ApplicationSecurityManager" />
+	
+	
+	<!-- Spring JMX support -->
+	<bean id="monmanJmxBean"
+		class="com.oivan.monman.util.MonmanJmxBean" />
+	
+	<!-- Resource Bundle -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages</value>
+			</list>
+		</property>
+	</bean>
+	
+</beans>
